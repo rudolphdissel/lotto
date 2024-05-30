@@ -2,7 +2,7 @@
 $('.extract-btn').on('click',function(){
     var user_choice=$(".user_choice").val().split(" ")
     //숫자로 변경
-    for(i=0;i<6;i++){
+    for(i=0;i<user_choice.length;i++){
         user_choice[i]=parseInt(user_choice[i])
     }
     // 6개의 숫자를 입력했는지 확인.
@@ -42,6 +42,7 @@ $('.extract-btn').on('click',function(){
     $(".e").text(numberAll[4]);
     $(".f").text(numberAll[5]);
     var correct = 0
+    //결과확인
     for (i=0; i<6; i++){
         for (j=0; j<6; j++){
             if (user_choice[i]===numberAll[j]){
@@ -51,11 +52,23 @@ $('.extract-btn').on('click',function(){
             $(".correct_count").text(correct);
         }
     }
-
+    $(".rank").text(rank_table(correct));
     }
-    //결과확인
-   
 )
+
+function rank_table(correct){
+    if (correct==6) {
+        return "1등"
+    } else if (correct==5) {
+        return "3등"
+    } else if (correct==4) {
+        return "4등"
+    } else if (correct==3) {
+        return "5등"
+    } else {
+        return "꽝"
+    }
+}
 
 
 
