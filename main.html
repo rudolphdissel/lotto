@@ -13,24 +13,31 @@
     <link rel="stylesheet" href="main.css" />
   </head>
   <body>
-    <div>
-      <span>기계의 선택: </span>
-      <span class="a"></span>
-      <span class="b"></span>
-      <span class="c"></span>
-      <span class="d"></span>
-      <span class="e"></span>
-      <span class="f"></span><br />
+    <header>로또 추첨게임!</header>
+    <div class="machine">
+      <span class="machine_title">기계의 선택</span><br />
+      <div>
+        <span class="a">0</span>
+        <span class="b">0</span>
+        <span class="c">0</span>
+        <span class="d">0</span>
+        <span class="e">0</span>
+        <span class="f">0</span><br />
+      </div>
       <button class="extract-btn">추첨</button><br />
     </div>
 
-    <div>
-      <span>User의 선택:</span>
+    <div class="user">
+      <span>User의 선택</span><br />
       <input class="user_choice" type="text" />
     </div>
-    <span>메시지:<p class="status_msg"></p></span>
-    <span>맞춘갯수:<span class="correct_count"></span></span><br>
-    <span>등수:<span class="rank"></span></span>
+    <div class="status">
+      <p class="status_msg"></p>
+      <span>맞춘갯수</span>
+      <span class="correct_count"></span>
+      <span>등수</span>
+      <span class="rank"></span>
+    </div>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="main.js"></script>
