@@ -1,50 +1,28 @@
+// 클릭 시 추첨 구현
 $('.extract-btn').on('click',function(){
+    var user_choice=$(".user_choice").val().split(" ")
+    if (user_choice.length!==6){
+        console.log("다시 입력해주세요")
+        return
+    }
     numberAll=[]
-    for (var i=0; i<6; i++){
-        while (true){
-            temp=Math.ceil(Math.random()*45);
-            if (numberAll.includes(temp)) {
-                continue
-            } else {
-                numberAll.push(temp);
-                break
+    // 중복 방지 추첨
+    while (numberAll.length<6){
+        temp=Math.ceil(Math.random()*45);
+        if (numberAll.includes(temp)) {
+            continue
+        } else {
+            numberAll.push(temp);
             }
-        }
-
-    }    
+        } 
     $(".a").text(numberAll[0]);
     $(".b").text(numberAll[1]);
     $(".c").text(numberAll[2]);
     $(".d").text(numberAll[3]);
     $(".e").text(numberAll[4]);
     $(".f").text(numberAll[5]);
-})
-
-// function lottoshow(){
-//     numberAll=[]
-//     for (var i=0; i<6; i++){
-//         while (true){
-//             temp=Math.ceil(Math.random()*45);
-//             if (numberAll.includes(temp)) {
-//                 continue
-//             } else {
-//                 numberAll.push(temp);
-//                 break
-//             }
-//         }
-           
-//         console.log(numberAll)
-//     }
-//     $(".a").text(numberAll[0]);
-//     $(".b").text(numberAll[1]);
-//     $(".c").text(numberAll[2]);
-//     $(".d").text(numberAll[3]);
-//     $(".e").text(numberAll[4]);
-//     $(".f").text(numberAll[5]);
-//     // 여기 코드가 영 마음에 안 든다. 수정필요.
-//     // 오름 차순 정렬 시키고싶음.
-// }
-// lottoshow()
+    }    
+)
 
 
 
