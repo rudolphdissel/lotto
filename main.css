@@ -42,3 +42,8 @@ header {
 .status_msg {
     color:red;
 }
+
+#container {
+    max-width: 300px;
+    margin: 0 auto;
+}

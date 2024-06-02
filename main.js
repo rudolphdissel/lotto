@@ -1,3 +1,55 @@
+// 당첨확률 그래프
+var drawChart= function(data) {
+    Highcharts.chart('container', {
+        chart: {
+            type: 'pie',
+            backgroundColor: '#343a40'
+        },
+        title: {
+            text: '로또 당첨확률 분포',
+            style: {
+                color: 'white',
+            }
+            
+        },
+        tooltip: {
+            valueSuffix: '%'
+        },
+    
+        plotOptions: {
+            series: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: [{
+                    enabled: true,
+                    distance: 20
+                }, {
+                    enabled: true,
+                    distance: -40,
+                    format: '{point.percentage:.1f}%',
+                    style: {
+                        fontSize: '1.2em',
+                        textOutline: 'none',
+                        opacity: 0.7
+                    },
+                    filter: {
+                        operator: '>',
+                        property: 'percentage',
+                        value: 10
+                    }
+                }]
+            }
+        },
+        series: [
+            {
+                name: 'Percentage',
+                colorByPoint: true,
+                data: data
+            }
+        ]
+    });
+}
+
 // 결과확인 클래스
 var Resultcheck ={
     correct_count:function(user_choice, numberAll){
@@ -108,6 +160,12 @@ $('.extract-btn').on('click',function(){
     win_game=hap[1]+hap[3]+hap[4]+hap[5]
     all_game=win_game+hap["꽝"]
     $(".percent").text(win_game/all_game*100)
+
+    // 당첨확률 그래프 출력
+    var data= Object.keys(hap).map(function(key){
+        return {name:key, y:hap[key]};
+    });
+    drawChart(data)
     }
 )
 
