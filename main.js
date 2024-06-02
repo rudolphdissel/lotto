@@ -83,6 +83,7 @@ $('.extract-btn').on('click',function(){
             numberAll.push(temp);
             }
         } 
+    numberAll.sort((a, b) => a - b);
     $(".a").text(numberAll[0]);
     $(".b").text(numberAll[1]);
     $(".c").text(numberAll[2]);
