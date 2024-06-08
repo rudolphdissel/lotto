@@ -5,11 +5,37 @@ body {
     background-color: aliceblue;
 }
 
-header {
+.title {
     text-align: center;
     font-size: 30px;
+    margin-top: 20px;
 }
 
+header {
+    height:60px;
+    color:black
+}
+
+header>nav {
+    max-width: 720px;
+    margin: 0 auto;
+    padding : 12px 20px;
+
+}
+
+header>nav>ul {
+    display:flex;
+    justify-content: center;
+}
+
+header>nav>ul>li {
+    background-color: white;
+    list-style: none;
+    flex-direction: column;
+    margin: 0 20px;
+    padding: 10px;
+    border-radius: 7px;
+}
 .machine {
     display:flex;
     flex-direction: column;
